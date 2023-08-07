@@ -1,0 +1,5 @@
+
+Run pug
+pug index.pug -w -P
+
+sass ./sass/app.scss ./styles/app.css --watch
