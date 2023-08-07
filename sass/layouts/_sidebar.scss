@@ -1,0 +1,66 @@
+@use "../abstracts" as abs;
+
+.sidebar {
+  @include abs.bg(white);
+  padding: 48px 30px;
+  display: flex;
+  flex-direction: column;
+  border-right: abs.$gray-natural2 1px solid;
+  &-logo {
+    display: block;
+    margin-bottom: 44px;
+    &-img {
+      padding-left: 20px;
+      height: 22px;
+    }
+  }
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    column-gap: 6px;
+    --gap: 26px;
+    &:not(:last-child):after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: abs.$gray-line;
+      margin-block: var(--gap);
+    }
+    &-heading {
+      font-size: 13px;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      color: abs.$text-gray;
+    }
+    &-link {
+      text-decoration: none;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: abs.$text-gray;
+      font-size: 14px;
+      line-height: 143%;
+      border-radius: 12px;
+      padding: 8px 30px 8px 20px;  
+      font-weight: 500;
+      &:hover {
+        background: var(--gradient, linear-gradient(142deg, #415EF4 0%, #7141EF 100%));
+        color: white;
+        font-weight: 600;
+        [fill^= "#E5"] {
+          fill: abs.$gray-natural1;
+          opacity: 1;
+        }
+        [fill^= "#A5"] {
+          fill: #A79EE5;
+        }
+      }
+    }
+    &-icon {
+      flex: 0 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

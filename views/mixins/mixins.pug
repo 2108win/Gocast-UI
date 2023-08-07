@@ -1,0 +1,5 @@
+mixin menuItem(text, icon = '<img src="./images/icons/leaderboard.png"', link) 
+  li.sidebar-menu-item
+    a.sidebar-menu-link(href= link)
+      span.sidebar-menu-icon !{icon}
+      span.sidebar-menu-text= text
